@@ -23,6 +23,17 @@ function loadView($name)
 }
 
 /**
+ * Load a partial file from the partials directory.
+ *
+ * @param string $name e.g. 'navbar' → views/partials/navbar.php
+ * @return void
+ */
+function loadPartial($name)
+{
+    require basePath("views/partials/{$name}.php");
+}
+
+/**
  * Strip the Laragon subdirectory prefix from REQUEST_URI so route
  * matching works whether the app lives at / or /ws03/.
  *

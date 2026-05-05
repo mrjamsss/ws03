@@ -1,3 +1,6 @@
+<?php loadPartial('head'); ?>
+<?php loadPartial('navbar'); ?>
+
 <!-- Job Listings -->
 <section>
     <div class="container mx-auto p-4 mt-4">
@@ -23,7 +26,7 @@
                             <span>Coding</span>
                         </li>
                     </ul>
-                    <a href="/ws03/listings"
+                    <a href="/listings"
                         class="block w-full text-center px-5 py-2.5 shadow-sm rounded border text-base font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200">
                         Details
                     </a>
@@ -50,7 +53,7 @@
                             <span>Advertising</span>
                         </li>
                     </ul>
-                    <a href="/ws03/listings"
+                    <a href="/listings"
                         class="block w-full text-center px-5 py-2.5 shadow-sm rounded border text-base font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200">
                         Details
                     </a>
@@ -77,7 +80,7 @@
                             <span>Programming</span>
                         </li>
                     </ul>
-                    <a href="/ws03/listings"
+                    <a href="/listings"
                         class="block w-full text-center px-5 py-2.5 shadow-sm rounded border text-base font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200">
                         Details
                     </a>
@@ -104,7 +107,7 @@
                             <span>Statistics</span>
                         </li>
                     </ul>
-                    <a href="/ws03/listings"
+                    <a href="/listings"
                         class="block w-full text-center px-5 py-2.5 shadow-sm rounded border text-base font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200">
                         Details
                     </a>
@@ -131,7 +134,7 @@
                             <span>Creative</span>
                         </li>
                     </ul>
-                    <a href="/ws03/listings"
+                    <a href="/listings"
                         class="block w-full text-center px-5 py-2.5 shadow-sm rounded border text-base font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200">
                         Details
                     </a>
@@ -157,11 +160,14 @@
                             <span>Machine Learning</span>
                         </li>
                     </ul>
-                    <a href="/ws03/listings"
+                    <a href="/listings"
                         class="block w-full text-center px-5 py-2.5 shadow-sm rounded border text-base font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200">
                         Details
                     </a>
                 </div>
             </div>
         </div>
+    </div>
 </section>
+
+<?php loadPartial('footer'); ?>

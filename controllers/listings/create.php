@@ -1,3 +1,1 @@
-<?php
-
-require basePath('views/listings/create.view.php');
+<?php loadView('listings/create'); ?>

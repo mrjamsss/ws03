@@ -1,3 +1,1 @@
-<?php
-
-require basePath('views/home.view.php');
+<?php loadView('home'); ?>
