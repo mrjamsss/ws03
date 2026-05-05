@@ -24,6 +24,8 @@ $router = new Router();
 
 require basePath('Routes.php');
 
+require basePath('Database.php');
+
 $method = $_SERVER['REQUEST_METHOD'];
 
 $router->route($path, $method);

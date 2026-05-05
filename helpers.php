@@ -17,10 +17,6 @@ function basePath($path = '')
  * @param string $name  e.g. 'error/404' → views/error/404.view.php
  * @return void
  */
-function loadView($name)
-{
-    require basePath("views/{$name}.view.php");
-}
 
 /**
  * Load a partial file from the partials directory.
@@ -52,4 +48,21 @@ function normaliseUri($uri)
     }
 
     return ($uri === '' || $uri === false) ? '/' : $uri;
+}
+
+function loadView($name, $data = [])
+{
+    $viewPath = basePath("views/{$name}.view.php");
+
+    if (file_exists($viewPath)) {
+        extract($data);
+        require $viewPath;
+    } else {
+        echo "View {$name} not found";
+    }
+}
+
+function formatSalary($salary)
+{
+    return '$' . number_format(floatval($salary));
 }
