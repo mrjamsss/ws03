@@ -12,7 +12,7 @@
    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 */
 
-
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Nunito:wght@400;500;600;700&display=swap');
 
 
 /* ----------------------------------------------------------------
@@ -24,19 +24,28 @@
    ---------------------------------------------------------------- */
 
 :root {
-  --color-header:       #001F3F;   /* Header at navigation bar - Navy Blue */
-  --color-accent:       #0084FF;   /* "Post a Job" button at mga highlight - Light Blue */
-  --color-page-bg:      #FFFFFF;   /* Background ng buong page - White */
-  --color-card-bg:      #E6F2FF;   /* Background ng mga card/box - Light Blue */
-  --color-heading:      #001F3F;   /* Kulay ng mga title at heading - Navy Blue */
-  --color-body-text:    #000000;   /* Regular na body text - Black */
-  --color-link:         #003366;   /* Mga clickable na links - Dark Navy Blue */
-  --color-tag-bg:       #D9EBFF;   /* Background ng mga tag/badge - Light Blue */
-  --color-tag-text:     #001F3F;   /* Text ng mga tag/badge - Navy Blue */
-  --color-footer:       #001F3F;   /* Footer background - Navy Blue */
-  --showcase-overlay:   rgba(0, 31, 63, 0.6); /* Hero banner overlay - Navy Blue overlay
-                                               0.0 = transparent
-                                               0.9 = halos itim */
+  --color-header: #2D1B69;
+  /* Header at navigation bar */
+  --color-accent: #7C3AED;
+  /* "Post a Job" button at mga highlight */
+  --color-page-bg: #F3EEFF;
+  /* Background ng buong page */
+  --color-card-bg: #FDFAFF;
+  /* Background ng mga card/box */
+  --color-heading: #1E1040;
+  /* Kulay ng mga title at heading */
+  --color-body-text: #4B5563;
+  /* Regular na body text */
+  --color-link: #ffffff;
+  /* Mga clickable na links */
+  --color-tag-bg: #EDE9FE;
+  /* Background ng mga tag/badge */
+  --color-tag-text: #5B21B6;
+  /* Text ng mga tag/badge */
+  --color-footer: #2D1B69;
+  /* Footer background */
+  --showcase-overlay: rgba(45, 27, 105, 0.25);
+  /* Hero banner overlay */
 }
 
 
@@ -54,9 +63,12 @@
      'Courier New', monospace
    ---------------------------------------------------------------- */
 
+
 :root {
-  --font-heading: 'Georgia', serif;      /* Para sa mga title at heading */
-  --font-body:    'Arial', sans-serif;   /* Para sa regular na text */
+  --font-heading: 'Syne', sans-serif;
+  /* Font para sa mga title at heading */
+  --font-body: 'Nunito', sans-serif;
+  /* Font para sa regular na text */
 }
 
 
@@ -78,7 +90,7 @@
 
 :root {
   --border-radius: 8px;
-  --card-shadow:   0 2px 8px rgba(0, 0, 0, 0.08);
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -95,43 +107,36 @@ body {
   color: var(--color-body-text) !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading) !important;
-  color: var(--color-heading) !important;
+  color: var(--color-heading);
 }
 
 a {
-  color: var(--color-link) !important;
+  color: var(--color-link);
 }
 
 header {
   background-color: var(--color-header) !important;
 }
 
-/* Restore white text inside dark-background sections */
-header h1, header h2, header h3, header h4, header h5, header h6,
-header a {
-  color: #ffffff !important;
-}
-
-/* Showcase hero section heading */
-.showcase h2,
-.showcase h1 {
-  color: #ffffff !important;
-}
-
-.bg-blue-900 h1, .bg-blue-900 h2, .bg-blue-900 h3,
-.bg-blue-900 h4, .bg-blue-900 h5, .bg-blue-900 h6,
-.bg-blue-900 p, .bg-blue-900 a,
-.bg-blue-800 h1, .bg-blue-800 h2, .bg-blue-800 h3,
-.bg-blue-800 h4, .bg-blue-800 h5, .bg-blue-800 h6,
-.bg-blue-800 p, .bg-blue-800 a {
-  color: #ffffff !important;
-}
-
 .bg-blue-900,
 .bg-blue-800 {
   background-color: var(--color-header) !important;
+}
+
+/* Force white text on headings inside dark-background sections */
+header h1, header h2, header h3,
+.bg-blue-900 h1, .bg-blue-900 h2, .bg-blue-900 h3,
+.bg-blue-800 h1, .bg-blue-800 h2, .bg-blue-800 h3,
+footer h1, footer h2, footer h3,
+.modern-footer h1, .modern-footer h2, .modern-footer h3 {
+  color: #ffffff !important;
 }
 
 .bg-yellow-500 {
@@ -147,8 +152,11 @@ header a {
   filter: brightness(0.88);
 }
 
-.bg-blue-500 {
+.bg-yellow-500,
+.bg-blue-500,
+.bg-green-500 {
   background-color: var(--color-accent) !important;
+  color: #ffffff !important;
 }
 
 .bg-white {
@@ -188,321 +196,275 @@ footer,
   background-color: var(--color-footer) !important;
 }
 
-/* Restore white text inside the footer */
-footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
-  color: #ffffff !important;
-}
-
-/* Footer links — override the global dark link color */
-footer a,
-.footer-links a,
-.footer-contact a,
-.footer-legal a,
-.social-link {
-  color: #b0b0b0 !important;
-}
-
-.footer-links a:hover,
-.footer-contact a:hover,
-.footer-legal a:hover {
-  color: var(--color-accent) !important;
-}
-
-.social-link {
-  color: var(--color-accent) !important;
-}
-
-.social-link:hover {
-  color: #1a1a2e !important;
-}
-
 .bg-gray-100 {
   background-color: var(--color-page-bg) !important;
 }
 
+.bg-red-500,
+.bg-white h2 {
+  color: #000000 !important;
+}
+
+.copy-right,
+.bg-white a.block {
+  background-color: #CFD8DC !important;
+}
+
+.h2-style {
+  font-size: 3.5rem !important;
+  /* Massive size like a hero H1 */
+  font-weight: 900 !important;
+}
+
+.marg-bot {
+  margin-bottom: 1.5rem !important;
+}
+
+a.btn-primary-action {
+  background-color: var(--color-header) !important;
+  color: #FFFFFF !important;
+  /* Force text to white */
+  display: block !important;
+  width: fit-content !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 8px !important;
+}
+
+.copy-right {
+  padding-bottom: 1rem !important;
+}
+
+/* ----------------------------------------------------------------
+   ADVANCED ZONE — Para sa gustong mag-explore pa!
+   ----------------------------------------------------------------
+   Alisin ang mga comment blocks para i-activate ang isang rule.
+   ---------------------------------------------------------------- */
 
 /* Hover effect sa mga link */
-a:hover {
+/* a:hover {
   text-decoration: underline;
   opacity: 0.85;
-}
+} */
 
 /* Kulay ng input fields */
-input, select, textarea {
+/* input, select, textarea {
   border-color: var(--color-link) !important;
   border-radius: var(--border-radius) !important;
-}
+} */
 
 /* Kulay ng success badge */
-.bg-green-100 { background-color: #d1fae5 !important; }
-   .text-green-800 { color: #065f46 !important; }
+/* .bg-green-100 { background-color: #d1fae5 !important; }
+   .text-green-800 { color: #065f46 !important; } */
 
-
-
-
-/* ================================================================
-   FOOTER STYLING
-   ================================================================ */
-
-.footer-section {
-  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
-  color: #ffffff;
-  padding: 60px 20px 20px;
-  margin-top: 80px;
-  font-family: var(--font-body);
+/* --- MODERN FOOTER STYLES --- */
+.modern-footer {
+  background-color: var(--color-footer) !important;
+  padding-top: 5rem !important;
+  padding-bottom: 2rem !important;
+  margin-top: 5rem !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.footer-column {
+  padding: 30px 30px;
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+  margin-bottom: 3rem;
 }
 
-/* Footer Logo & Branding */
+.footer-brand {
+  flex: 1 1 300px;
+}
+
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
 }
 
-.footer-logo i {
-  font-size: 28px;
-  color: var(--color-accent);
-  transition: transform 0.3s ease;
+.footer-logo svg {
+  stroke: #f0fdfa;
 }
 
 .footer-logo h3 {
-  font-size: 24px;
+  font-family: var(--font-heading) !important;
+  font-size: 1.5rem;
   font-weight: 700;
+  color: #ffffff !important;
   margin: 0;
-  color: white;
-  font-family: var(--font-heading);
 }
 
-.footer-logo:hover i {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.footer-description {
-  font-size: 14px;
+.footer-brand p {
+  font-family: var(--font-body) !important;
+  color: #cbd5e1 !important;
+  font-size: 0.875rem;
   line-height: 1.6;
-  color: #b0b0b0;
-  margin: 0;
+  margin-bottom: 1.5rem;
 }
 
-/* Footer Titles */
-.footer-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: white;
-  margin: 0 0 15px 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-heading);
-  position: relative;
-  padding-bottom: 10px;
-}
-
-.footer-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 30px;
-  height: 2px;
-  background: var(--color-accent);
-  border-radius: 1px;
-}
-
-/* Footer Links */
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li {
-  margin-bottom: 10px;
-}
-
-.footer-links a {
-  color: #b0b0b0;
-  text-decoration: none;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer-links a::before {
-  content: '→';
-  opacity: 0;
-  transform: translateX(-8px);
-  transition: all 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: var(--color-accent);
-  transform: translateX(5px);
-}
-
-.footer-links a:hover::before {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Social Links */
 .footer-socials {
   display: flex;
-  gap: 15px;
-  margin-top: 15px;
+  gap: 1rem;
 }
 
-.social-link {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(255, 193, 7, 0.1);
-  border: 2px solid var(--color-accent);
-  color: var(--color-accent) !important;
+.footer-socials a {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  text-decoration: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50% !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  transition: background-color 0.3s ease;
+  text-decoration: none !important;
 }
 
-.social-link:hover {
-  background-color: var(--color-accent);
-  color: #1a1a2e !important;
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+.footer-socials a:hover {
+  background-color: var(--color-accent) !important;
 }
 
-/* Contact Info */
-.footer-contact {
+.footer-links {
+  flex: 1 1 150px;
+}
+
+.footer-links h4,
+.footer-newsletter h4 {
+  font-family: var(--font-heading) !important;
+  color: #ffffff !important;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
-.footer-contact p {
-  margin: 0;
-  font-size: 14px;
-  color: #b0b0b0;
+.footer-links a {
+  font-family: var(--font-body) !important;
+  color: #cbd5e1 !important;
+  font-size: 0.875rem;
+  text-decoration: none !important;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--color-accent) !important;
+  transform: translateX(4px);
+}
+
+.footer-newsletter {
+  flex: 1 1 250px;
+}
+
+.footer-newsletter p {
+  font-family: var(--font-body) !important;
+  color: #cbd5e1 !important;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.footer-newsletter form {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.3s ease;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.footer-contact i {
-  color: var(--color-accent);
-  width: 18px;
-  text-align: center;
+.footer-newsletter input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius) !important;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-family: var(--font-body) !important;
+  box-sizing: border-box;
 }
 
-.footer-contact a {
-  color: #b0b0b0;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.footer-newsletter input:focus {
+  outline: none;
+  border-color: var(--color-accent);
 }
 
-.footer-contact a:hover {
-  color: var(--color-accent);
-  text-decoration: underline;
+.footer-newsletter button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius) !important;
+  background-color: var(--color-accent) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  font-family: var(--font-heading) !important;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+  box-sizing: border-box;
 }
 
-/* Footer Divider */
-.footer-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-  margin: 40px 0;
+.footer-newsletter button:hover {
+  filter: brightness(0.9);
 }
 
-/* Footer Bottom */
 .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 0;
+}
+
+.footer-bottom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding-top: 20px;
+  gap: 1rem;
 }
 
-.copyright {
-  font-size: 13px;
-  color: #808080;
+.footer-bottom-container p {
+  font-family: var(--font-body) !important;
+  color: #94a3b8 !important;
+  font-size: 0.75rem;
   margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
-.footer-legal {
+.footer-bottom-links {
   display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 13px;
+  gap: 1.5rem;
 }
 
-.footer-legal a {
-  color: #b0b0b0;
-  text-decoration: none;
+.footer-bottom-links a {
+  font-family: var(--font-body) !important;
+  color: #94a3b8 !important;
+  font-size: 0.75rem;
+  text-decoration: none !important;
   transition: color 0.3s ease;
 }
 
-.footer-legal a:hover {
-  color: var(--color-accent);
-  text-decoration: underline;
+.footer-bottom-links a:hover {
+  color: #ffffff !important;
 }
 
-.divider {
-  color: #505050;
+/* Specific override for job titles to ensure they are #1E293B */
+.rounded-lg h2.text-xl {
+  color: #1E293B !important;
 }
 
-/* Responsive Footer */
-@media (max-width: 768px) {
-  .footer-section {
-    padding: 40px 20px 20px;
-    margin-top: 50px;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-legal {
-    justify-content: center;
-  }
-
-  .footer-socials {
-    justify-content: center;
-  }
-
-  .copyright {
-    justify-content: center;
-  }
+/* Remote and Local tags background override */
+span.bg-blue-500.rounded-full {
+  background-color: var(--color-accent) !important;
+  color: #ffffff !important;
 }

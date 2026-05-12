@@ -1,11 +1,11 @@
 <?php
 
-/**
- * Application Routes
- *
- * Register all application routes here using the $router instance.
- * The $router variable is injected by public/index.php before this file is required.
- */
+// return [
+//     '/' => 'Controllers/home.php',
+//     '/listings' => 'Controllers/listings/index.php',
+//     '/listings/create' => 'Controllers/listings/create.php',
+//     '404' => 'Controllers/error/404.php'
+// ];
 
 $router->get('/', 'controllers/home.php');
 $router->get('/listings', 'controllers/listings/index.php');

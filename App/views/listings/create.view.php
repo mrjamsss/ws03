@@ -1,5 +1,5 @@
-<?php loadPartial('head'); ?>
-<?php loadPartial('navbar'); ?>
+<?php loadPartial('head') ?>
+<?php loadPartial('navbar') ?>
 
 <!-- Post a Job Form Box -->
 <section class="flex justify-center items-center mt-20">
@@ -104,5 +104,4 @@
         </form>
     </div>
 </section>
-
-<?php loadPartial('footer'); ?>
+<?php loadPartial('bottom-banner') ?>

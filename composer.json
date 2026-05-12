@@ -1,0 +1,16 @@
+{
+    "name": "mrjamsss/ws03",
+    "description": "Jobseeker Application",
+    "authors": [
+        {
+            "name": "Jorald Allen Sevilla",
+            "email": "joraldmasilsevilla0806@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "Framework/",
+            "App\\": "App/"
+        }
+    }
+}
