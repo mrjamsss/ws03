@@ -4,6 +4,7 @@ namespace Framework;
 
 use PDO;
 use PDOException;
+use Exception;
 
 class Database
 {
@@ -17,7 +18,7 @@ class Database
         try {
             $this->conn = new PDO($dsn, $config['username'], $config['password'], $options);
         } catch (PDOException $e) {
-            throw new \Exception('Database failed connection: ' . $e->getMessage());
+            throw new Exception('Database failed connection: ' . $e->getMessage());
         }
     }
 
@@ -32,7 +33,7 @@ class Database
             $sth->execute();
             return $sth;
         } catch (PDOException $e) {
-            throw new \Exception("Query failed: {$e->getMessage()}");
+            throw new Exception("Query failed: {$e->getMessage()}");
         }
     }
 }
