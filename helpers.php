@@ -30,7 +30,6 @@ function loadView($name, $data = [])
     } else {
         echo "View {$name} not found.";
     }
-
 }
 
 /**
@@ -43,7 +42,7 @@ function loadView($name, $data = [])
 function loadPartial($name)
 {
     $partialPath = basePath("App/views/partials/{$name}.php");
-    
+
     if (file_exists($partialPath)) {
         require $partialPath;
     } else {
@@ -58,7 +57,8 @@ function loadPartial($name)
  * 
  */
 
-function formatSalary($salary) {
+function formatSalary($salary)
+{
     return '$' .  number_format(floatval($salary));
 }
 
@@ -68,7 +68,8 @@ function formatSalary($salary) {
  * @param mixed $value
  * @return void
  */
-function inspect($value) {
+function inspect($value)
+{
     echo '<pre>';
     var_dump($value);
     echo '</pre>';
@@ -80,8 +81,24 @@ function inspect($value) {
  * @param mixed $value
  * @return void
  */
-function inspectAndDie($value) {
+
+function inspectAndDie($value)
+{
     echo '<pre>';
     die(var_dump($value));
     echo '</pre>';
+}
+
+
+/**
+ * Sanitized Data
+ * 
+ * @param string $dirty
+ * @return string
+ * 
+ */
+
+function sanitize($dirty)
+{
+    return filter_var(trim($dirty), FILTER_SANITIZE_SPECIAL_CHARS);
 }
