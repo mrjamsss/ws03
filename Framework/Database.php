@@ -28,7 +28,7 @@ class Database
             $sth = $this->conn->prepare($query);
             // Bind named params
             foreach ($params as $param => $value) {
-                $sth->bindParam(':' . $param, $value);
+                $sth->bindValue(':' . $param, $value);
             }
             $sth->execute();
             return $sth;
