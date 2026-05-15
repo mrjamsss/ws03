@@ -5,10 +5,10 @@
 <section class="min-h-[60vh] flex flex-col justify-center items-center py-16 px-4" style="min-height: 60vh;">
     <div class="text-center max-w-2xl mx-auto">
         <h1 class="font-extrabold tracking-tight mb-4" style="font-size: 8rem; line-height: 1; color: var(--color-heading); text-shadow: 4px 4px 0px rgba(124, 58, 237, 0.1);">
-            404
+            <?= $status ?>
         </h1>
         <h2 class="text-3xl font-bold mb-6" style="color: var(--color-heading); line-height: normal; padding-bottom: 0.2em;">
-            Page Not Found
+            <?= $message ?>
         </h2>
         <p class="text-xl leading-relaxed mb-10 max-w-lg mx-auto" style="color: #334155; font-family: var(--font-body);">
             We couldn't find the page you're looking for. It might have been removed, or the link may be broken.
