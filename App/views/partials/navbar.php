@@ -17,16 +17,18 @@ use Framework\Session;
         </h1>
         <nav class="space-x-4">
             <?php if (Session::has('user')) : ?>
-                <div class="flex justify-between items-center gap-4">
-                    <div style="font-family: var(--font-heading) !important; font-weight: 600;" class="typewriter">Welcome <?= Session::get('user')['name'] ?></div>
-                    <form method="POST" action="/auth/logout">
-                        <button type="submit" class="text-white inline hover:underline">Logout</button>
+                <div class="flex justify-between items-center gap-6">
+                    <div style="font-family: var(--font-heading) !important; font-weight: 600; margin-right: 0.75rem;" class="typewriter">Welcome <?= Session::get('user')['name'] ?></div>
+                    <form method="POST" action="/auth/logout" style="margin-right: 0.75rem;">
+                        <button type="submit" class="nav-link bg-transparent border-none cursor-pointer">Logout</button>
                     </form>
-                    <a href="/listings/create" class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded hover:shadow-md transition duration-300"><i class="fa fa-edit"></i> Post a Job</a>
+                    <a href="/listings/create" class="shimmer-btn" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.03em; cursor: pointer; border: none; text-decoration: none;"><i class="fa fa-edit"></i> Post a Job</a>
                 </div>
             <?php else : ?>
-                <a href="/auth/login" class="text-white hover:underline">Login</a>
-                <a href="/auth/register" class="text-white hover:underline">Register</a>
+                <div class="flex items-center gap-6">
+                    <a href="/auth/login" class="nav-link">Login</a>
+                    <a href="/auth/register" class="nav-link">Register</a>
+                </div>
             <?php endif ?>
 
         </nav>

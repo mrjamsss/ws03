@@ -22,7 +22,9 @@
                     class="w-full px-4 py-2 border rounded focus:outline-none" />
             </div>
             <button
-                type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded focus:outline-none">
+                type="submit"
+                class="shimmer-btn"
+                style="width: 100%; display: block; text-align: center; padding: 0.75rem 1.5rem; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 600; letter-spacing: 0.03em; cursor: pointer; border: none;">
                 Login
             </button>
 

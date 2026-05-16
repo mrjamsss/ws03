@@ -1,7 +1,7 @@
 /* ============================================================
    JOBSEEK — CUSTOM STYLESHEET
    Pangalan ng Student: Jorald Allen M. Sevilla
-   Theme Name:          LinkedIn inspired theme
+   Theme Name:          Deep Space UI
    ============================================================ */
 
 /* --- Google Fonts Import (optional) ---
@@ -28,21 +28,21 @@
   /* Header at navigation bar */
   --color-accent: #0077B5;
   /* "Post a Job" button at mga highlight */
-  --color-page-bg: #F3F2EF;
+  --color-page-bg: transparent;
   /* Background ng buong page */
-  --color-card-bg: #FFFFFF;
+  --color-card-bg: rgba(255, 255, 255, 0.05);
   /* Background ng mga card/box */
-  --color-heading: #000000;
+  --color-heading: #ffffff;
   /* Kulay ng mga title at heading */
-  --color-body-text: #333333;
+  --color-body-text: #e2e8f0;
   /* Regular na body text */
-  --color-link: #0077B5;
+  --color-link: #90D5FF;
   /* Mga clickable na links */
-  --color-tag-bg: #E1F0F8;
+  --color-tag-bg: rgba(255, 255, 255, 0.1);
   /* Background ng mga tag/badge */
-  --color-tag-text: #0077B5;
+  --color-tag-text: #90D5FF;
   /* Text ng mga tag/badge */
-  --color-footer: #333333;
+  --color-footer: rgba(0, 0, 0, 0.3);
   /* Footer background */
   --showcase-overlay: rgba(0, 0, 0, 0.5);
   /* Hero banner overlay */
@@ -122,12 +122,17 @@ a {
 }
 
 header {
-  background-color: var(--color-header) !important;
+  background-color: rgba(0, 119, 181, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .bg-blue-900,
 .bg-blue-800 {
-  background-color: var(--color-header) !important;
+  background-color: rgba(0, 119, 181, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
 }
 
 /* Force white text on headings inside dark-background sections */
@@ -142,6 +147,7 @@ footer h1, footer h2, footer h3,
 .bg-yellow-500,
 .bg-blue-500 {
   background-color: #90D5FF !important;
+  border: 1px solid transparent !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
   color: #000000 !important;
   transition: all 0.3s ease;
@@ -158,9 +164,10 @@ footer h1, footer h2, footer h3,
 
 .hover\:bg-yellow-600:hover,
 .hover\:bg-blue-600:hover {
-  background-color: var(--color-accent) !important;
+  background-color: transparent !important;
   color: #ffffff !important;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+  border-color: #90D5FF !important;
+  box-shadow: 0 0 10px rgba(144, 213, 255, 0.3) !important;
   filter: none !important;
 }
 
@@ -171,17 +178,66 @@ footer h1, footer h2, footer h3,
 
 .bg-white {
   background-color: var(--color-card-bg) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: var(--border-radius) !important;
-  box-shadow: var(--card-shadow) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+  color: #ffffff !important;
 }
 
-.bg-indigo-100 {
-  background-color: var(--color-tag-bg) !important;
+/* --- SHIMMER BUTTON --- */
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+  background: transparent !important;
+  color: #ffffff !important;
+  border-radius: var(--border-radius) !important;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  border: none !important;
+  font-family: var(--font-heading) !important;
 }
 
-.text-indigo-700,
-.text-indigo-800 {
-  color: var(--color-tag-text) !important;
+.shimmer-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    rgba(144, 213, 255, 0.8),
+    transparent 30%
+  );
+  animation: spin-shimmer 3s linear infinite;
+  z-index: -2;
+}
+
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: rgba(2, 6, 23, 0.95);
+  border-radius: calc(var(--border-radius) - 1px);
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+.shimmer-btn:hover {
+  transform: scale(1.02) !important;
+  box-shadow: 0 0 15px rgba(144, 213, 255, 0.4) !important;
+}
+
+.shimmer-btn:hover::after {
+  background: rgba(30, 41, 59, 1); /* Solid dark slate instead of transparent */
+}
+
+@keyframes spin-shimmer {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .text-blue-700,
@@ -204,15 +260,19 @@ button,
 footer,
 .bg-indigo-900 {
   background-color: var(--color-footer) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
 }
 
 .bg-gray-100 {
-  background-color: var(--color-page-bg) !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
 }
 
 .bg-red-500,
 .bg-white h2 {
-  color: #000000 !important;
+  color: #ffffff !important;
 }
 
 .copy-right,
@@ -221,31 +281,67 @@ footer,
 }
 
 .h2-style {
-  font-size: 3.5rem !important;
-  /* Massive size like a hero H1 */
-  font-weight: 900 !important;
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  font-family: 'Syne', sans-serif !important;
+  color: #ffffff !important;
+  text-transform: none !important; /* Matches "Find Your Dream Job" case */
+  letter-spacing: -1px;
+  line-height: 1.1;
+  /* 3D Depth Design */
+  text-shadow: 
+    0 1px 0 #efefef,
+    0 2px 0 #dfdfdf,
+    0 3px 0 #cfcfcf,
+    0 4px 0 #bfbfbf,
+    0 1px 10px rgba(0, 0, 0, 0.2);
+  /* Reflection effect from second image */
+  -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(255, 255, 255, 0.15));
+  margin-bottom: 5rem !important;
+  display: inline-block;
 }
 
 .marg-bot {
   margin-bottom: 1.5rem !important;
 }
 
+/* --- NAVBAR LINKS --- */
+.nav-link {
+  position: relative;
+  text-decoration: none !important;
+  color: #ffffff !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  padding: 0.25rem 0.5rem;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #90D5FF;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover {
+  color: #90D5FF !important;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
 a.btn-primary-action {
-  background-color: #90D5FF !important;
-  color: #000000 !important;
   display: block !important;
   width: fit-content !important;
   margin-left: auto !important;
   margin-right: auto !important;
   padding: 8px 24px !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
-  transition: all 0.3s ease;
-}
-
-a.btn-primary-action:hover {
-  background-color: var(--color-accent) !important;
-  color: #ffffff !important;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
 .copy-right {
@@ -265,10 +361,34 @@ a.btn-primary-action:hover {
 } */
 
 /* Kulay ng input fields */
-/* input, select, textarea {
-  border-color: var(--color-link) !important;
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="number"],
+select, 
+textarea {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: var(--border-radius) !important;
-} */
+  color: #ffffff !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  transition: all 0.3s ease !important;
+}
+
+input::placeholder, 
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+input:focus, 
+select:focus, 
+textarea:focus {
+  outline: none !important;
+  border-color: #90D5FF !important;
+  box-shadow: 0 0 10px rgba(144, 213, 255, 0.3) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
 
 /* Kulay ng success badge */
 /* .bg-green-100 { background-color: #d1fae5 !important; }
@@ -277,6 +397,8 @@ a.btn-primary-action:hover {
 /* --- MODERN FOOTER STYLES --- */
 .modern-footer {
   background-color: var(--color-footer) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
   padding-top: 5rem !important;
   padding-bottom: 2rem !important;
   margin-top: 5rem !important;
@@ -417,27 +539,6 @@ a.btn-primary-action:hover {
   border-color: var(--color-accent);
 }
 
-.footer-newsletter button {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border-radius: var(--border-radius) !important;
-  background-color: #90D5FF !important;
-  color: #000000 !important;
-  font-weight: 600;
-  font-family: var(--font-heading) !important;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
-  transition: all 0.3s ease;
-  box-sizing: border-box;
-}
-
-.footer-newsletter button:hover {
-  background-color: var(--color-accent) !important;
-  color: #ffffff !important;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
-  filter: none !important;
-}
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -479,13 +580,25 @@ a.btn-primary-action:hover {
   color: #ffffff !important;
 }
 
-/* Specific override for job titles to ensure they are #1E293B */
+/* Specific override for job titles to ensure they are readable */
 .rounded-lg h2.text-xl {
-  color: #1E293B !important;
+  color: #ffffff !important;
+}
+
+.text-gray-700 {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 /* Remote and Local tags background override */
 span.bg-blue-500.rounded-full {
   background-color: var(--color-accent) !important;
   color: #ffffff !important;
+}
+
+.glass-header {
+  background: rgba(0, 119, 181, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
 }

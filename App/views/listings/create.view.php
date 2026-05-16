@@ -100,16 +100,24 @@
                     placeholder="Email Address For Applications"
                     class="w-full px-4 py-2 border rounded focus:outline-none" value="<?= $listing['email'] ?? '' ?>" />
             </div>
-            <button
-                class="w-full bg-green-500 hover:bg-green-600 text-white px-4 py-2 my-3 rounded focus:outline-none">
-                Save
-            </button>
-            <a
-                href="/"
-                class="block text-center w-full bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded focus:outline-none">
-                Cancel
-            </a>
+            <!-- Action Buttons -->
+            <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.5rem;">
+                <button
+                    type="submit"
+                    class="shimmer-btn"
+                    style="width: 100%; display: block; text-align: center; padding: 0.75rem 1.5rem; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 600; letter-spacing: 0.03em; cursor: pointer; border: none;">
+                    Publish Listing
+                </button>
+                <a
+                    href="/"
+                    style="width: 100%; display: block; text-align: center; padding: 0.65rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.5); font-family: var(--font-body); font-size: 0.875rem; font-weight: 600; text-decoration: none; background: transparent; transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;"
+                    onmouseover="this.style.borderColor='rgba(255,255,255,0.3)'; this.style.color='#ffffff'; this.style.background='rgba(255,255,255,0.05)';"
+                    onmouseout="this.style.borderColor='rgba(255,255,255,0.12)'; this.style.color='rgba(255,255,255,0.5)'; this.style.background='transparent';">
+                    Cancel
+                </a>
+            </div>
         </form>
     </div>
 </section>
 <?php loadPartial('bottom-banner') ?>
+<?php loadPartial('footer') ?>

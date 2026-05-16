@@ -15,9 +15,7 @@ use Framework\Session;
             </p>
         </div>
         <?php if (Session::has('user')) : ?>
-            <a href="/listings/create" class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded hover:shadow-md transition duration-300">
-                <i class="fa fa-edit"></i> Post a Job
-            </a>
+            <a href="/listings/create" class="shimmer-btn" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 600; letter-spacing: 0.03em; cursor: pointer; border: none; text-decoration: none;"><i class="fa fa-edit"></i> Post a Job</a>
         <?php endif; ?>
     </div>
 </section>
