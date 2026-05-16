@@ -6,13 +6,14 @@
 
 <section class="container mx-auto p-4 mt-4">
     <div class="rounded-lg shadow-md bg-white p-3">
+        <?php loadPartial('message') ?>
         <div class="flex justify-between items-center mb-4">
             <a class="inline-flex items-center font-bold transition duration-300" style="color: #2563EB;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='#2563EB'" href="/listings">
                 <i class="fa fa-arrow-alt-circle-left mr-2"></i>
                 Back To Listings
             </a>
             <div class="flex items-center gap-4">
-                <a href="/edit" class="flex items-center justify-center px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-regular rounded shadow-sm">Edit</a>
+                <a href="/listings/edit/<?= $listing->id ?>" class="flex items-center justify-center px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-regular rounded shadow-sm">Edit</a>
                 <!-- Delete Form -->
                 <form method="POST" style="display: contents;">
                     <input type="hidden" name="_method" value="DELETE">
