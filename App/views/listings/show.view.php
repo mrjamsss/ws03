@@ -1,7 +1,5 @@
 <?php loadPartial('head'); ?>
 <?php loadPartial('navbar'); ?>
-<?php // loadPartial('showcase-search'); 
-?>
 <?php loadPartial('top-banner'); ?>
 
 <section class="container mx-auto p-4 mt-4">
@@ -12,15 +10,17 @@
                 <i class="fa fa-arrow-alt-circle-left mr-2"></i>
                 Back To Listings
             </a>
-            <div class="flex items-center gap-4">
-                <a href="/listings/edit/<?= $listing->id ?>" class="flex items-center justify-center px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-regular rounded shadow-sm">Edit</a>
-                <!-- Delete Form -->
-                <form method="POST" style="display: contents;">
-                    <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit" class="flex items-center justify-center px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-regular rounded shadow-sm">Delete</button>
-                </form>
-                <!-- End Delete Form -->
-            </div>
+            <?php if (Framework\Authorization::isOwner($listing->user_id)): ?>
+                <div class="flex items-center gap-4">
+                    <a href="/listings/edit/<?= $listing->id ?>" class="flex items-center justify-center px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-regular rounded shadow-sm">Edit</a>
+                    <!-- Delete Form -->
+                    <form method="POST" style="display: contents;">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="flex items-center justify-center px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-regular rounded shadow-sm">Delete</button>
+                    </form>
+                    <!-- End Delete Form -->
+                </div>
+            <?php endif; ?>
         </div>
         <div class="p-4">
             <h2 class="text-xl font-semibold"><?= $listing->title ?></h2>
