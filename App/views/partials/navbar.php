@@ -18,7 +18,7 @@ use Framework\Session;
         <nav class="space-x-4">
             <?php if (Session::has('user')) : ?>
                 <div class="flex justify-between items-center gap-4">
-                    <div>Welcome <?= Session::get('user')['name'] ?></div>
+                    <div style="font-family: var(--font-heading) !important; font-weight: 600;" class="typewriter">Welcome <?= Session::get('user')['name'] ?></div>
                     <form method="POST" action="/auth/logout">
                         <button type="submit" class="text-white inline hover:underline">Logout</button>
                     </form>
@@ -32,3 +32,56 @@ use Framework\Session;
         </nav>
     </div>
 </header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const typewriters = document.querySelectorAll('.typewriter');
+
+        typewriters.forEach(el => {
+            const text = el.textContent.trim();
+
+            // Calculate actual width before animating to prevent layout shift
+            const measure = document.createElement('span');
+            measure.style.visibility = 'hidden';
+            measure.style.whiteSpace = 'nowrap';
+            measure.style.font = window.getComputedStyle(el).font;
+            measure.textContent = text;
+            document.body.appendChild(measure);
+            const targetWidth = measure.offsetWidth + 8; // Extra padding for cursor
+            document.body.removeChild(measure);
+
+            // Set fixed dimensions
+            el.style.width = targetWidth + 'px';
+            el.style.display = 'inline-block';
+            el.style.whiteSpace = 'nowrap';
+
+            // Create inner typing element
+            const inner = document.createElement('span');
+            inner.style.borderRight = '2px solid white';
+            inner.style.paddingRight = '2px';
+            inner.style.display = 'inline-block';
+
+            el.textContent = '';
+            el.appendChild(inner);
+
+            let i = 0;
+            const speed = 100; // ms per character
+
+            function type() {
+                if (i < text.length) {
+                    inner.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed + Math.random() * 50);
+                } else {
+                    // Start blinking cursor when finished
+                    setInterval(() => {
+                        inner.style.borderColor = inner.style.borderColor === 'transparent' ? 'white' : 'transparent';
+                    }, 500);
+                }
+            }
+
+            // Initial delay before typing starts
+            setTimeout(type, 500);
+        });
+    });
+</script>

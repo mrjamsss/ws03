@@ -4,9 +4,11 @@
 <?php loadPartial('top-banner'); ?>
 
 <!-- Job Listings -->
-<section>
-    <div class="container mx-auto p-4 mt-4">
-        <h2 class="text-center text-3xl mb-4 font-bold border border-gray-300 p-3">Recent Jobs</h2>
+<section class="relative overflow-hidden py-8">
+    <div id="aurora-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+
+    <div class="container mx-auto p-4 relative z-10">
+        <h2 class="text-center text-3xl mb-4 font-bold border border-gray-300 p-3 bg-white/80 backdrop-blur-sm rounded">Recent Jobs</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             <?php foreach ($listings as $listing): ?>
                 <!-- Job Listing 1: Software Engineer -->
@@ -37,11 +39,31 @@
                 </div>
             <?php endforeach; ?>
         </div>
-        <a href="listings" class="btn-primary-action block text-xl text-center px-8 py-4 rounded shadow-md">
+        <a href="listings" class="btn-primary-action block text-xl text-center px-8 py-4 rounded shadow-md relative z-10">
             <i class="fa fa-arrow-alt-circle-right mr-2"></i>
             Show All Jobs
         </a>
+    </div>
 </section>
+
+<script type="module">
+    import {
+        Aurora
+    } from '/js/aurora.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('aurora-bg');
+        if (container) {
+            new Aurora(container, {
+                // Ocean Depth / Violet / Blue theme colors matching your site
+                colorStops: ['#1e3a8a', '#90D5FF', '#3b82f6'],
+                amplitude: 1.2,
+                blend: 0.5,
+                speed: 0.5
+            });
+        }
+    });
+</script>
 
 <?php loadPartial('bottom-banner'); ?>
 <?php loadPartial('footer'); ?>

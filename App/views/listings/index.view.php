@@ -4,8 +4,10 @@
 
 
 <!-- Job Listings -->
-<section>
-    <div class="container mx-auto p-4 mt-4">
+<section class="relative overflow-hidden py-8">
+    <div id="aurora-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+
+    <div class="container mx-auto p-4 relative z-10">
         <h2 class="text-center text-3xl mb-4 font-bold border border-gray-300 p-3"><?php if (isset($keywords)): ?>Search Results for: <?= htmlspecialchars($keywords) ?><?php else : ?>All Jobs<?php endif; ?></h2>
         <?php loadPartial('message') ?>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -39,6 +41,25 @@
             <?php endforeach; ?>
         </div>
 </section>
+
+<script type="module">
+    import {
+        Aurora
+    } from '/js/aurora.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('aurora-bg');
+        if (container) {
+            new Aurora(container, {
+                // Ocean Depth / Violet / Blue theme colors matching your site
+                colorStops: ['#1e3a8a', '#90D5FF', '#3b82f6'],
+                amplitude: 1.2,
+                blend: 0.5,
+                speed: 0.5
+            });
+        }
+    });
+</script>
 
 <?php loadPartial('bottom-banner') ?>
 <?php loadPartial('footer') ?>
